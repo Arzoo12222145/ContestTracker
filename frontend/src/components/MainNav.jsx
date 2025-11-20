@@ -58,7 +58,7 @@ function MainNav() {
 
           {/* GitHub Repo Link - Desktop and Mobile */}
           <a
-            href="https://github.com/krishna-nishant/contest-tracker"
+            href="https://github.com/Arzoo12222145"
             target="_blank"
             rel="noopener noreferrer"
             className="hidden md:block"
