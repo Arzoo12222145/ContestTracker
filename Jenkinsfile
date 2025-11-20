@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        IMAGE = 'krishna0795/contest-tracker'
+    IMAGE = 'arzoo12222145/contest-tracker'
         TAG = "v${BUILD_NUMBER}"
         DOCKER_HUB_CREDS = credentials('dockerhub-creds')
         YOUTUBE_API_KEY = credentials('youtube-api-key')

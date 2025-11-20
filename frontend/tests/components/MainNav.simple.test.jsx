@@ -81,7 +81,7 @@ describe("MainNav", () => {
     renderMainNav();
     const githubLink = screen.getByLabelText("GitHub repository");
     expect(githubLink).toBeInTheDocument();
-    expect(githubLink).toHaveAttribute("href", "https://github.com/krishna-nishant/contest-tracker");
+    expect(githubLink).toHaveAttribute("href", "https://github.com/Arzoo12222145/contest-tracker");
     expect(githubLink).toHaveAttribute("target", "_blank");
     expect(githubLink).toHaveAttribute("rel", "noopener noreferrer");
   });

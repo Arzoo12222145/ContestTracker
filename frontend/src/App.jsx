@@ -23,7 +23,7 @@ function App() {
           </main>
           <footer className="border-t py-4">
             <div className="container text-center text-sm text-muted-foreground">
-              Contest Tracker © {new Date().getFullYear()} | Made with ❤️ by Krishna
+                Contest Tracker © {new Date().getFullYear()} | Made with ❤️ by Arzoo
             </div>
           </footer>
         </div>

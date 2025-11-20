@@ -1,11 +1,12 @@
-"use client";
-
 const { google } = require("googleapis");
 const Contest = require("../models/Contest");
 require("dotenv").config();
 
 const YOUTUBE_API_KEY = process.env.YOUTUBE_API_KEY;
-const youtube = google.youtube({ version: "v3", auth: YOUTUBE_API_KEY });
+if (!YOUTUBE_API_KEY) {
+  console.warn("⚠️ YOUTUBE_API_KEY not set — YouTube fetches will be skipped. Set YOUTUBE_API_KEY in .env to enable them.");
+}
+const youtube = YOUTUBE_API_KEY ? google.youtube({ version: "v3", auth: YOUTUBE_API_KEY }) : null;
 
 // ✅ **Define YouTube Playlists for Each Platform**
 const PLAYLISTS = {
@@ -17,6 +18,11 @@ const PLAYLISTS = {
 // ✅ **Fetch Videos from a Playlist**
 const fetchNewVideos = async (playlistId) => {
   try {
+    if (!youtube) {
+      console.log(`⚠️ Skipping YouTube fetch for playlist ${playlistId} because API key is not configured.`);
+      return [];
+    }
+
     console.log(`🔍 Fetching videos from YouTube playlist: ${playlistId}`);
 
     const response = await youtube.playlistItems.list({
